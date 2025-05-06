@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 app.set('view engine','ejs')
+app.use(express.static('public'))
 app.get('/',(req,res)=>{
     res.send("Hellooo")
 })
@@ -8,7 +9,10 @@ app.get('/home',(req,res)=>{
     // res.send("My Home page")
     // console.log(__dirname);
     // res.sendFile(__dirname+"/home.html")
-    res.render('first')
+    res.render('home')
+})
+app.get("/category",(req,res)=>{
+    res.render('category')
 })
 app.get("/about",(req,res)=>{
     res.sendFile(__dirname+"/about.html")
