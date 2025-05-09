@@ -1,0 +1,22 @@
+import { ObjectId } from "mongodb";
+
+show databases;
+use dbName;
+db.createCollection("users")
+db.users.insertOne({
+    "userid":ObjectId('681d8afba67aec21bb4ff714')
+    "name":"werw",
+    "age":25,
+    "salary":25000
+})
+
+db.users.insertMany([
+    {
+        "name":"werw",
+        "age":25
+    },
+    {
+        "name":"werw",
+        "age":25
+    }
+])

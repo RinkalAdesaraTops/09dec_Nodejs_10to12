@@ -1,5 +1,6 @@
 var express = require('express')
 var app = express()
+var catRoutes = require('./routes/catRoutes')
 app.set('view engine','ejs')
 app.use(express.static('public'))
 app.get('/',(req,res)=>{
@@ -11,9 +12,10 @@ app.get('/home',(req,res)=>{
     // res.sendFile(__dirname+"/home.html")
     res.render('home')
 })
-app.get("/category",(req,res)=>{
-    res.render('category')
-})
+app.use('/category',catRoutes)
+// app.get("/category",(req,res)=>{
+//     res.render('category')
+// })
 app.get("/about",(req,res)=>{
     res.sendFile(__dirname+"/about.html")
 })
