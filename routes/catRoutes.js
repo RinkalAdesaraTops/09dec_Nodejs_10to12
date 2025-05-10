@@ -1,5 +1,5 @@
 var express = require('express')
-const { disp } = require('../controllers/CatController')
+const { disp, add } = require('../controllers/CatController')
 var router = express.Router()
 
 router.get('/',disp)
