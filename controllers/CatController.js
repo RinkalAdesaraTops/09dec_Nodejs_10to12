@@ -1,7 +1,13 @@
 const main = require('../models/CategoryModel')
-const add = (req,res)=>{
+const add = async(req,res)=>{
     let data = req.body
-    console.log(data);
+    let connection = await main()
+    let db = connection.db
+    let collection = db.collection('category') 
+    let result = await collection.insertOne(data)
+    if(result){
+        res.redirect("/category")
+    }
 
 }
 const disp = async(req,res)=>{

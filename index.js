@@ -2,6 +2,7 @@ var express = require('express')
 var app = express()
 var catRoutes = require('./routes/catRoutes')
 app.set('view engine','ejs')
+app.use(express.urlencoded({extended:false}))
 app.use(express.static('public'))
 app.get('/',(req,res)=>{
     res.send("Hellooo")

@@ -86,7 +86,15 @@
                      
                     </tr>
                   </thead>
-                 <tbody></tbody>
+                 <tbody>
+                  <% catdata.map((i)=>{ %>
+                      <tr>
+                        <td><%= i._id%></td>
+                        <td><%= i.cname%></td>
+                        <td><button class="btn btn-danger">Delete</button></td>
+                      </tr>
+                  <% }) %>
+                 </tbody>
                 </table>
               </div>
               <!-- /.card-body -->
